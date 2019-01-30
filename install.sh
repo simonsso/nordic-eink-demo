@@ -1,6 +1,9 @@
 #! /bin/bash
 
-cargo build || exit -1
+cargo build --release || exit -1
+
+export BINFILE="target/thumbv7em-none-eabihf/release/nordic-eink"
+# export BINFILE  "target/thumbv7em-none-eabihf/debug/nordic-eink"
 
 export WAITING='Waiting for media'
 while [[ ! -w /media/$USER/JLINK/ ]] ;
@@ -10,6 +13,6 @@ do
     export WAITING=''
 done
 install -d docs/release
-echo arm-none-eabi-objcopy target/thumbv6m-none-eabi/debug/microbit /media/$USER/JLINK/out.hex -O ihex
-arm-none-eabi-objcopy target/thumbv7em-none-eabihf/debug/nordic-eink  docs/release/out.hex  -O ihex
+echo arm-none-eabi-objcopy $BINFILE /media/$USER/JLINK/out.hex -O ihex
+arm-none-eabi-objcopy $BINFILE  docs/release/out.hex  -O ihex
 cp docs/release/out.hex /media/$USER/JLINK/

@@ -127,20 +127,23 @@ fn main() -> ! {
     let mut display = Display::new(epd.width(), epd.height(), &mut buffer.buffer);
 
     // Draw some text
-    display.draw(
-        Font6x8::render_str("Hello Rust vesropm!")
-            .with_stroke(Some(Color::Black))
-            .with_fill(Some(Color::White))
-            .translate(Coord::new(5, 50))
-            .into_iter()
-    );
+    // display.draw(
+    //     Font6x8::render_str("Hello Rust vesropm!")
+    //         .with_stroke(Some(Color::Black))
+    //         .with_fill(Some(Color::White))
+    //         .translate(Coord::new(5, 50))
+    //         .into_iter()
+    // );
 
     let rust_bytes = include_bytes!("../data/rust144x144.raw");
     let abema_bytes = include_bytes!("../data/abema151x151.raw");
+    let philips_bytes = include_bytes!("../data/philps225x168.raw");
 
     let rust_img:Image1BPP<epd_waveshare::color::Color> = embedded_graphics::image::Image::new (rust_bytes,144,144);
     let abema_img:Image1BPP<epd_waveshare::color::Color> = embedded_graphics::image::Image::new(abema_bytes,151,151);
+    let philips_img:Image1BPP<epd_waveshare::color::Color> = embedded_graphics::image::Image::new(abema_bytes,225,168);
 
+    display.draw(rust_img.into_iter());
     // Transfer the frame data to the epd
     let _ans = epd.update_frame(&mut spi, &display.buffer());
 
