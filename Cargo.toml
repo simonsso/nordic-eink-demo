@@ -10,9 +10,7 @@ cortex-m = "0.5.8"
 cortex-m-rt = "0.6.5"
 cortex-m-semihosting = "0.3.2"
 panic-halt = "0.2.0"
-nb = "0.1.1"
-epd-waveshare = { version = "0.2.0", default-features = false, features = ["epd1in54", "graphics"]}
-embedded-graphics = "0.4.3"
+
 [dependencies.embedded-hal]
 features = ["unproven"]
 version = "0.2"
