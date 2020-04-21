@@ -18,9 +18,9 @@ features = ["unproven"]
 version = "0.2"
 [dependencies.nrf52832-hal]
 # version = "0.6.0"
-# git = " https://github.com/simonsso/nrf52-hal/"
-# branch = "spim_dev"
-path = "/home/simson/rustlib/nrf52-hal/nrf52832-hal/"
+git = " https://github.com/simonsso/nrf52-hal/"
+branch = "spim_dev"
+# path = "/home/simson/rustlib/nrf52-hal/nrf52832-hal/"
 
 [profile.release]
 codegen-units = 1 # better optimizations
