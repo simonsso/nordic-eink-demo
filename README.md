@@ -2,6 +2,7 @@
 Connect eink module to nordic dev board
 
 ## HW connections
+```
 (order as on 10040 dk pin out)
 Pin     Connecton   Colour
 P0.27   busy        purple
@@ -11,3 +12,4 @@ GND                 black
 P0.25   CS          orange
 P0.24   clk         yellow
 P0.24   Din         blue
+```
