@@ -11,5 +11,5 @@ P0.02   DC          Green
 GND                 black
 P0.25   CS          orange
 P0.24   clk         yellow
-P0.24   Din         blue
+P0.23   Din(MOSI)   blue
 ```
