@@ -52,6 +52,9 @@ use embedded_graphics::Drawing;
 
 use core::option::*;
 
+
+use embedded_hal::digital::OutputPin;
+
 #[entry]
 fn main() -> ! {
 

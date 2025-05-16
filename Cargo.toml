@@ -5,21 +5,22 @@ authors = ["Fredrik Simonsson <simson@thesimson.net>"]
 edition = "2018"
 
 [dependencies]
-alloc-cortex-m = "0.3.5"
-cortex-m = "0.5.8"
-cortex-m-rt = "0.6.5"
-cortex-m-semihosting = "0.3.2"
-panic-halt = "0.2.0"
-nb = "0.1.1"
+alloc-cortex-m = "0.4.4"
+cortex-m = "0.7.7"
+## cortex-m-rt = "=0.6"
+cortex-m-semihosting = "0.5.0"
+panic-halt = "1.0.0"
+nb = "1.1.0"
 epd-waveshare = { version = "0.2.0", default-features = false, features = ["epd1in54", "graphics"]}
-embedded-graphics = "0.4.3"
+embedded-graphics = "0.8.1"
+## proc-macro2 = "=0.5"
 [dependencies.embedded-hal]
-features = ["unproven"]
-version = "0.2"
+# features = ["unproven"]
+version = "1.0.0"
 [dependencies.nrf52832-hal]
-# version = "0.6.0"
-git = " https://github.com/simonsso/nrf52-hal/"
-branch = "spim_dev"
+version = "0.6.0"
+# git = "https://github.com/simonsso/nrf52-hal/"
+# branch = "spim_dev"
 # path = "/home/simson/rustlib/nrf52-hal/nrf52832-hal/"
 
 [profile.release]
